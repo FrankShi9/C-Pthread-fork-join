@@ -9,20 +9,20 @@ struct Param{
     int* B;
 };
 
-void* plus(struct Param input){
-    result1 = *input.A + *input.B;
+void* plus(){
+    result1 = a+ b;
     printf("First thread calculates a + b. The result 1 is: %d\n", result1);
     return NULL;
 }
 
-void* times(struct Param input){
-    result2 = *input.A * *input.B;
+void* times(){
+    result2 = a * b;
     printf("Second thread calculates a * b. The result 2 is: %d\n", result2);
     return NULL;
 }
 
-void* minus(struct Param input){
-    result3 =  *input.B - *input.A;
+void* minus(){
+    result3 =  b - a;
     printf("Third thread calculates a - b. The result 3 is: %d\n", result3);
     return NULL;
 }
@@ -32,13 +32,14 @@ void* minus(struct Param input){
 int main(){
     struct Param argument = {&a, &b};
     pthread_t tid[3];
-    pthread_create(&tid[0], NULL, (void *(*)(void *)) plus, (void*)(&argument));
-    pthread_create(&tid[1], NULL, (void *(*)(void *)) times,(void*)(&argument));
-    pthread_create(&tid[2], NULL, (void *(*)(void *)) minus,(void*)(&argument));
+    pthread_create(&tid[0], NULL, plus, NULL);
+    pthread_create(&tid[1], NULL, times,NULL);
+    pthread_create(&tid[2], NULL, minus,NULL);
     
     pthread_join(tid[0],NULL);
     pthread_join(tid[1],NULL);
     pthread_join(tid[2],NULL);
+    printf("\n");
     printf("Let's combine the results like this: result 1 + result 2 - result 3.\n");
     printf("The final value is: %d\n",result1+result2-result3);
     return 0;
