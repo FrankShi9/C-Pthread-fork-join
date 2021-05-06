@@ -1,0 +1,3 @@
+/cygdrive/c/Users/Frank/CLionProjects/W9Lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/Frank/CLionProjects/W9Lab2/cmake-build-debug/CMakeFiles/W9Lab2.dir
+/cygdrive/c/Users/Frank/CLionProjects/W9Lab2/cmake-build-debug/CMakeFiles/edit_cache.dir

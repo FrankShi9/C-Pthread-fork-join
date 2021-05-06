@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/W9Lab2.dir/main.c.o  -o W9Lab2.exe -Wl,--out-implib,libW9Lab2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
